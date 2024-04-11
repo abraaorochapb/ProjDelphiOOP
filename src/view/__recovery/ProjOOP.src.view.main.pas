@@ -20,9 +20,8 @@ type
     btnEditar: TButton;
     btnCancelar: TButton;
     pnlPesquisa: TPanel;
-    edtPesquisa: TEdit;  procedure btnCancelarClick(Sender: TObject);
     edtPesquisa: TEdit;
-    ListView1: TListView;
+    DBGrid1: TDBGrid;
     procedure btnCancelarClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure btnNovoClick(Sender: TObject);
@@ -79,27 +78,7 @@ begin
     lTelaLogin.Free;
   end;
 end;
-procedure TfrmMain.preencheListView(aTarefas: TObjectList<TTarefa>);
-var
-  lItem: TListItem;
-  lTarefa: TTarefa;
-begin
-  if not Assigned(aTarefas) then
-  begin
-    Exit;
-  end;
-  ListView1.Clear;
-  for lTarefa in aTarefas do
-  begin
-    lItem := ListView1.Items.Add;
-    lItem.Caption := lTarefa.id.ToString;
-    lItem.SubItems.Add(lTarefa.titulo);
-    lItem.SubItems.Add(FormatDateTime('dd/mm/yyyy hh:mm',
-      lTarefa.data_criacao));
-    lItem.Data := lTarefa;
-  end;
 
-end;
 function TfrmMain.validaUsuario(aEmail, aSenha: String): Boolean;
 var
   lUsuario: TUsuario;

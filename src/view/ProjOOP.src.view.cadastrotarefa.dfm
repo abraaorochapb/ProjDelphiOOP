@@ -20,6 +20,8 @@ object frmCadastroTarefa: TfrmCadastroTarefa
     Align = alClient
     BevelOuter = bvNone
     TabOrder = 0
+    ExplicitWidth = 1095
+    ExplicitHeight = 723
     object pnlBotoes: TPanel
       Left = 0
       Top = 654

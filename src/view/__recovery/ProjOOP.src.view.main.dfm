@@ -2,8 +2,8 @@ object frmMain: TfrmMain
   Left = 0
   Top = 0
   Caption = 'Tarefas'
-  ClientHeight = 723
-  ClientWidth = 1006
+  ClientHeight = 724
+  ClientWidth = 1010
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -15,10 +15,12 @@ object frmMain: TfrmMain
   object pnlTela: TPanel
     Left = 0
     Top = 0
-    Width = 1006
-    Height = 723
+    Width = 1010
+    Height = 724
     Align = alClient
     TabOrder = 0
+    ExplicitWidth = 1006
+    ExplicitHeight = 723
     object pnlCabecalho: TPanel
       Left = 1
       Top = 1
@@ -133,28 +135,18 @@ object frmMain: TfrmMain
             TextHint = 'Digite para pesquisar'
           end
         end
-        object ListView1: TListView
+        object DBGrid1: TDBGrid
           Left = 0
           Top = 57
           Width = 1008
           Height = 535
           Align = alClient
-          Columns = <
-            item
-              Caption = 'ID'
-            end
-            item
-              Caption = 'Titulo'
-            end
-            item
-              Caption = 'Data/Cria'#231#227'o'
-            end
-            item
-              Caption = 'Descri'#231#227'o'
-            end>
           TabOrder = 1
-          ExplicitWidth = 1004
-          ExplicitHeight = 534
+          TitleFont.Charset = DEFAULT_CHARSET
+          TitleFont.Color = clWindowText
+          TitleFont.Height = -12
+          TitleFont.Name = 'Segoe UI'
+          TitleFont.Style = []
         end
       end
     end
