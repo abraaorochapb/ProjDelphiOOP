@@ -4,8 +4,9 @@ interface
 
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants,
-  System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ExtCtrls;
+  System.Classes, Vcl.Graphics, System.Generics.Collections,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ExtCtrls,
+  ProjOOP.src.model.tarefa;
 
 type
   TfrmCadastroTarefa = class(TForm)
@@ -19,10 +20,12 @@ type
     edtTitulo: TEdit;
     memoDescricao: TMemo;
     procedure btnCancelarClick(Sender: TObject);
+    procedure btnNovoClick(Sender: TObject);
   private
     { Private declarations }
   public
-    { Public declarations }
+    FTarefas: TObjectList<TTarefa>;
+    constructor Create(AOwner: TComponent; aTarefa: TObjectList<TTarefa>);
   end;
 
 var
@@ -35,6 +38,27 @@ implementation
 procedure TfrmCadastroTarefa.btnCancelarClick(Sender: TObject);
 begin
   Close;
+end;
+
+procedure TfrmCadastroTarefa.btnNovoClick(Sender: TObject);
+var
+ltarefa: TTarefa;
+begin
+  ltarefa.Create;
+  ltarefa.id := FTarefas.Count + 1;
+  ltarefa.id_usuario := 1;
+  ltarefa.titulo := edtTitulo.Text;
+  ltarefa.descricao := memoDescricao.Text;
+  FTarefas.Add(ltarefa);
+  edtTitulo.Clear;
+  memoDescricao.Clear;
+end;
+
+constructor TfrmCadastroTarefa.Create(AOwner: TComponent;
+  aTarefa: TObjectList<TTarefa>);
+begin
+  inherited Create(AOwner);
+  FTarefas := aTarefa;
 end;
 
 end.

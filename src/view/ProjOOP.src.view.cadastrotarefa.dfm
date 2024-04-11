@@ -20,8 +20,8 @@ object frmCadastroTarefa: TfrmCadastroTarefa
     Align = alClient
     BevelOuter = bvNone
     TabOrder = 0
-    ExplicitWidth = 1017
-    ExplicitHeight = 709
+    ExplicitWidth = 1095
+    ExplicitHeight = 723
     object pnlBotoes: TPanel
       Left = 0
       Top = 654
@@ -35,8 +35,8 @@ object frmCadastroTarefa: TfrmCadastroTarefa
       Padding.Bottom = 5
       ParentBackground = False
       TabOrder = 0
-      ExplicitTop = 640
-      ExplicitWidth = 1021
+      ExplicitTop = 653
+      ExplicitWidth = 1095
       object btnNovo: TButton
         Left = 6
         Top = 6
@@ -46,6 +46,7 @@ object frmCadastroTarefa: TfrmCadastroTarefa
         Hint = 'Salvar tarefa'
         Caption = 'Salvar'
         TabOrder = 0
+        OnClick = btnNovoClick
       end
       object btnCancelar: TButton
         Left = 118
@@ -65,34 +66,34 @@ object frmCadastroTarefa: TfrmCadastroTarefa
       Height = 654
       Align = alClient
       BevelOuter = bvNone
-      Color = clBtnHighlight
+      Color = clInactiveBorder
       ParentBackground = False
       TabOrder = 1
-      ExplicitWidth = 1021
-      ExplicitHeight = 640
+      ExplicitWidth = 1095
+      ExplicitHeight = 653
       object Label1: TLabel
-        Left = 336
+        Left = 352
         Top = 128
         Width = 41
         Height = 15
         Caption = 'TITULO:'
       end
       object Label2: TLabel
-        Left = 336
+        Left = 352
         Top = 219
         Width = 66
         Height = 15
         Caption = 'DESCRI'#199#195'O:'
       end
       object edtTitulo: TEdit
-        Left = 336
+        Left = 352
         Top = 149
         Width = 353
         Height = 23
         TabOrder = 0
       end
       object memoDescricao: TMemo
-        Left = 336
+        Left = 352
         Top = 240
         Width = 353
         Height = 193
