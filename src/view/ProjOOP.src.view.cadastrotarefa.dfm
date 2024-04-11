@@ -2,8 +2,8 @@ object frmCadastroTarefa: TfrmCadastroTarefa
   Left = 0
   Top = 0
   Caption = 'Cadastrar Tarefa'
-  ClientHeight = 724
-  ClientWidth = 1099
+  ClientHeight = 723
+  ClientWidth = 1095
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -15,13 +15,11 @@ object frmCadastroTarefa: TfrmCadastroTarefa
   object pnlTela: TPanel
     Left = 0
     Top = 0
-    Width = 1099
-    Height = 724
+    Width = 1095
+    Height = 723
     Align = alClient
     BevelOuter = bvNone
     TabOrder = 0
-    ExplicitWidth = 1095
-    ExplicitHeight = 723
     object pnlBotoes: TPanel
       Left = 0
       Top = 654

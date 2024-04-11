@@ -20,9 +20,7 @@ type
     btnEditar: TButton;
     btnCancelar: TButton;
     pnlPesquisa: TPanel;
-    edtPesquisa: TEdit;
-    DBGrid1: TDBGrid;
-    procedure btnCancelarClick(Sender: TObject);
+    edtPesquisa: TEdit;  procedure btnCancelarClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure btnNovoClick(Sender: TObject);
   private

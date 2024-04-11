@@ -2,8 +2,8 @@ object frmMain: TfrmMain
   Left = 0
   Top = 0
   Caption = 'Tarefas'
-  ClientHeight = 724
-  ClientWidth = 1010
+  ClientHeight = 723
+  ClientWidth = 1006
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -15,12 +15,10 @@ object frmMain: TfrmMain
   object pnlTela: TPanel
     Left = 0
     Top = 0
-    Width = 1010
-    Height = 724
+    Width = 1006
+    Height = 723
     Align = alClient
     TabOrder = 0
-    ExplicitWidth = 1006
-    ExplicitHeight = 723
     object pnlCabecalho: TPanel
       Left = 1
       Top = 1
