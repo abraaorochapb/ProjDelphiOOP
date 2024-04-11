@@ -52,6 +52,7 @@ begin
   FTarefas.Add(ltarefa);
   edtTitulo.Clear;
   memoDescricao.Clear;
+  ltarefa.Free;
 end;
 
 constructor TfrmCadastroTarefa.Create(AOwner: TComponent;

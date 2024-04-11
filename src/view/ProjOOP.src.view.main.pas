@@ -20,6 +20,7 @@ type
     btnEditar: TButton;
     btnCancelar: TButton;
     pnlPesquisa: TPanel;
+    edtPesquisa: TEdit;  procedure btnCancelarClick(Sender: TObject);
     edtPesquisa: TEdit;
     ListView1: TListView;
     procedure btnCancelarClick(Sender: TObject);
@@ -27,7 +28,6 @@ type
     procedure btnNovoClick(Sender: TObject);
   private
     function validaUsuario(aEmail, aSenha: String): Boolean;
-    procedure preencheListView(aTarefas: TObjectList<TTarefa>);
   public
     { Public declarations }
   end;
@@ -55,7 +55,6 @@ begin
   lCadastroTarefa := TfrmCadastroTarefa.Create(self, lTarefas);
   try
     lCadastroTarefa.ShowModal;
-    preencheListView(lTarefas);
   finally
     FreeAndNil(lCadastroTarefa);
     lTarefas.Free;
@@ -72,7 +71,7 @@ begin
     if not validaUsuario(lTelaLogin.edtEmail.Text, lTelaLogin.edtSenha.Text)
     then
     begin
-      Showmessage('Credenciais inv·lidas, tentenovamente');
+      Showmessage('Credenciais inv√°lidas, tentenovamente');
       Application.Terminate;
     end;
 
@@ -80,7 +79,6 @@ begin
     lTelaLogin.Free;
   end;
 end;
-
 procedure TfrmMain.preencheListView(aTarefas: TObjectList<TTarefa>);
 var
   lItem: TListItem;
@@ -102,7 +100,6 @@ begin
   end;
 
 end;
-
 function TfrmMain.validaUsuario(aEmail, aSenha: String): Boolean;
 var
   lUsuario: TUsuario;
