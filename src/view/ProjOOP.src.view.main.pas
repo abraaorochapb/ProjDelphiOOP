@@ -21,13 +21,12 @@ type
     btnCancelar: TButton;
     pnlPesquisa: TPanel;
     edtPesquisa: TEdit;
-    ListView1: TListView;
+    DBGrid1: TDBGrid;
     procedure btnCancelarClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure btnNovoClick(Sender: TObject);
   private
     function validaUsuario(aEmail, aSenha: String): Boolean;
-    procedure preencheListView(aTarefas: TObjectList<TTarefa>);
   public
     { Public declarations }
   end;
@@ -55,7 +54,6 @@ begin
   lCadastroTarefa := TfrmCadastroTarefa.Create(self, lTarefas);
   try
     lCadastroTarefa.ShowModal;
-    preencheListView(lTarefas);
   finally
     FreeAndNil(lCadastroTarefa);
     lTarefas.Free;
@@ -79,28 +77,6 @@ begin
   finally
     lTelaLogin.Free;
   end;
-end;
-
-procedure TfrmMain.preencheListView(aTarefas: TObjectList<TTarefa>);
-var
-  lItem: TListItem;
-  lTarefa: TTarefa;
-begin
-  if not Assigned(aTarefas) then
-  begin
-    Exit;
-  end;
-  ListView1.Clear;
-  for lTarefa in aTarefas do
-  begin
-    lItem := ListView1.Items.Add;
-    lItem.Caption := lTarefa.id.ToString;
-    lItem.SubItems.Add(lTarefa.titulo);
-    lItem.SubItems.Add(FormatDateTime('dd/mm/yyyy hh:mm',
-      lTarefa.data_criacao));
-    lItem.Data := lTarefa;
-  end;
-
 end;
 
 function TfrmMain.validaUsuario(aEmail, aSenha: String): Boolean;

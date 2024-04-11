@@ -7,7 +7,8 @@ uses
   System.Classes, Vcl.Graphics, System.Generics.Collections,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ExtCtrls, Vcl.StdCtrls, Data.DB,
   Vcl.Grids, Vcl.DBGrids, ProjOOP.src.model.usuario,
-  ProjOOP.src.view.cadastrotarefa, Vcl.ComCtrls, ProjOOP.src.model.tarefa;
+  ProjOOP.src.view.cadastrotarefa, Vcl.ComCtrls, ProjOOP.src.model.tarefa,
+  ProjOOP.src.dao.daousuario;
 
 type
   TfrmMain = class(TForm)
@@ -26,6 +27,8 @@ type
     procedure FormCreate(Sender: TObject);
     procedure btnNovoClick(Sender: TObject);
   private
+    FDAOUsuario: TDAOUsuario;
+    FUsuario: TUsuario;
     function validaUsuario(aEmail, aSenha: String): Boolean;
   public
     { Public declarations }
@@ -64,7 +67,7 @@ procedure TfrmMain.FormCreate(Sender: TObject);
 var
   lTelaLogin: TfrmLogin;
 begin
-  lTelaLogin := TfrmLogin.Create(nil);
+  lTelaLogin  := TfrmLogin.Create(nil);
   try
     lTelaLogin.ShowModal;
     if not validaUsuario(lTelaLogin.edtEmail.Text, lTelaLogin.edtSenha.Text)
@@ -74,23 +77,18 @@ begin
       Application.Terminate;
     end;
 
+
   finally
     lTelaLogin.Free;
   end;
 end;
 
 function TfrmMain.validaUsuario(aEmail, aSenha: String): Boolean;
-var
-  lUsuario: TUsuario;
 begin
-  lUsuario := TUsuario.Create;
-  try
-    lUsuario.email := 'email';
-    lUsuario.senha := 'senha';
-    result := ((lUsuario.email = aEmail) and (lUsuario.senha = aSenha));
-  finally
-    lUsuario.Free;
-  end;
+  FDAOUsuario := TDAOUsuario.Create;
+  FUsuario := FDAOUsuario.LoginUsuario(aEmail, aSenha);
+  result := not FUsuario.id.ToString.IsEmpty;
+  FreeAndNil(FDAOUsuario);
 end;
 
 end.

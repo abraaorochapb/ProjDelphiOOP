@@ -7,7 +7,9 @@ uses
   ProjOOP.src.model.tarefa in 'src\model\ProjOOP.src.model.tarefa.pas',
   ProjOOP.src.view.cadastrousuario in 'src\view\ProjOOP.src.view.cadastrousuario.pas' {frmCadastroUsuario},
   ProjOOP.src.view.cadastrotarefa in 'src\view\ProjOOP.src.view.cadastrotarefa.pas' {frmCadastroTarefa},
-  ProjOOP.src.view.login in 'src\view\ProjOOP.src.view.login.pas' {frmLogin};
+  ProjOOP.src.view.login in 'src\view\ProjOOP.src.view.login.pas' {frmLogin},
+  ProjOOP.src.model.conexaodb in 'src\model\ProjOOP.src.model.conexaodb.pas' {dmConexao: TDataModule},
+  ProjOOP.src.dao.daousuario in 'src\dao\ProjOOP.src.dao.daousuario.pas';
 
 {$R *.res}
 
