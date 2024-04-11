@@ -135,28 +135,18 @@ object frmMain: TfrmMain
             TextHint = 'Digite para pesquisar'
           end
         end
-        object ListView1: TListView
+        object DBGrid1: TDBGrid
           Left = 0
           Top = 57
           Width = 1008
           Height = 535
           Align = alClient
-          Columns = <
-            item
-              Caption = 'ID'
-            end
-            item
-              Caption = 'Titulo'
-            end
-            item
-              Caption = 'Data/Cria'#231#227'o'
-            end
-            item
-              Caption = 'Descri'#231#227'o'
-            end>
           TabOrder = 1
-          ExplicitWidth = 1004
-          ExplicitHeight = 534
+          TitleFont.Charset = DEFAULT_CHARSET
+          TitleFont.Color = clWindowText
+          TitleFont.Height = -12
+          TitleFont.Name = 'Segoe UI'
+          TitleFont.Style = []
         end
       end
     end

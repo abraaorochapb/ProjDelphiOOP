@@ -10,6 +10,9 @@ object frmCadastroUsuario: TfrmCadastroUsuario
   Font.Height = -12
   Font.Name = 'Segoe UI'
   Font.Style = []
+  Position = poMainFormCenter
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
   TextHeight = 15
   object pnlTela: TPanel
     Left = 0
@@ -44,27 +47,31 @@ object frmCadastroUsuario: TfrmCadastroUsuario
         Align = alLeft
         Caption = 'Salvar'
         TabOrder = 0
+        OnClick = btnNovoClick
       end
-      object Button2: TButton
-        Left = 81
+      object Cancelar: TButton
+        Left = 105
         Top = 6
         Width = 75
         Height = 58
-        Align = alLeft
-        Caption = 'Button2'
+        Margins.Left = 5
+        Align = alCustom
+        Caption = 'Cancelar'
         TabOrder = 1
+        OnClick = CancelarClick
       end
     end
     object Panel1: TPanel
       Left = 0
-      Top = 0
+      Top = 64
       Width = 1021
-      Height = 640
+      Height = 576
       Align = alClient
       BevelOuter = bvNone
-      Color = clBtnHighlight
+      Color = clInactiveBorder
       ParentBackground = False
       TabOrder = 1
+      ExplicitTop = 0
       ExplicitWidth = 1017
       ExplicitHeight = 639
       object Label1: TLabel
@@ -109,6 +116,20 @@ object frmCadastroUsuario: TfrmCadastroUsuario
         Height = 23
         TabOrder = 2
       end
+    end
+    object Panel2: TPanel
+      Left = 0
+      Top = 0
+      Width = 1021
+      Height = 64
+      Align = alTop
+      Color = clMoneyGreen
+      Padding.Left = 5
+      Padding.Top = 5
+      Padding.Right = 5
+      Padding.Bottom = 5
+      ParentBackground = False
+      TabOrder = 2
     end
   end
 end
